@@ -6,9 +6,18 @@
 import json
 import logging
 
-# Generates safe name base on provisioning record values and rules
-#  defined in ./json/safenamerules.json (path is relative to function
-#  calling this function).
+'''
+ The design intention of this function is to automate CyberArk's
+ recommended best-practices for safe naming described in this document:
+ https://cyberark.my.site.com/s/article/Safe-Naming-Convention-Best-Practices
+
+ Recognizing that that best-practice is just a starting point, thise
+ function supports adaptations of the practice per customer requirements.
+
+ It generates a safe name based on values in the provisioning request and
+  rules defined in ./json/safenamerules.json (path is relative to function
+  calling this function).
+'''
 
 def getSafeName(prov_req):
 
