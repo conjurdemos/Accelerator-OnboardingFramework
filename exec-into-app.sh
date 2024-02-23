@@ -1,3 +1,3 @@
 #!/bin/bash 
-source ./onboard-framework.sh
+source ./framework-config.sh
 docker exec -it $ONBOARD_DEMO_CONTAINER bash

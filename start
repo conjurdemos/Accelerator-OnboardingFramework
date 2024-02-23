@@ -1,12 +1,11 @@
 #!/bin/bash 
 set -euo pipefail
 
-source ./onboard-framework.sh
+source ./framework-config.sh
 
 main() {
   build_image
   start_container
-  docker exec -it $ONBOARD_DEMO_CONTAINER bash
 }
 
 build_image() {
@@ -24,7 +23,7 @@ start_container() {
     -v $(pwd)/framework:/home/demo	\
     -p "$ONBOARD_PORT:8000"		\
     $ONBOARD_DEMO_IMAGE			\
-    -c "sleep infinity"
+    -c "cd framework; uvicorn endpoints:app --reload --host 0.0.0.0"
 }
 
 main $@
