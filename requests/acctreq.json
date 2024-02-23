@@ -1,0 +1,18 @@
+{
+    "billcode": 240222,
+    "project": "feb22test",
+    "env": "test",
+    "platform": "aws",
+    "apprReqd": "True",
+    "type": "database",
+    "subtype": "postgres",
+    "accountValues": {
+        "address": "rdsaddress",
+        "username": "rdsuser",
+        "secret": "rdspassword",
+        "engine": "postgres",
+        "host": "foo.bar.baz",
+        "port": "5432",
+        "dbInstanceIdentifier": "cluster2"
+    }
+}
