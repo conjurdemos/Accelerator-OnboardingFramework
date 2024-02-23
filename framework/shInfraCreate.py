@@ -1,12 +1,12 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 
 import json
 import sys
 import logging
 from cybronboard import *
 
-logfile = "./logs/safeCreate.log"
-loglevel = logging.INFO       # BEWARE! DEBUG loglevel can leak secrets!
+logfile = "./logs/shInfraCreate.log"
+loglevel = logging.INFO      # BEWARE! DEBUG loglevel can leak secrets!
 logfmode = 'w'                # w = overwrite, a = append
 
 # MAIN =================================================
@@ -43,14 +43,32 @@ logging.info("Successfully authenticated.")
 prov_req["session_token"] = resp_dict["session_token"]
 prov_req["cybr_subdomain"] = admin_creds["cybr_subdomain"]
 
-print(f"Creating safe...")
-resp_dict = createSafe(prov_req)
-errCheck(resp_dict, expected=[201,409])
-logging.info(f"safe_name: {prov_req['safe_name']} was created or already exists.")
+print("Getting SecretsHub source store ID...")
+resp_dict = getSHSourceStoreId(prov_req)
+errCheck(resp_dict)
+logging.info(resp_dict["response_body"])
+prov_req["source_store_id"] = resp_dict["store_id"]
+print("Source store ID: ", prov_req["source_store_id"])
 
-print("Adding members...")
-resp_dict = addSafeMembers(prov_req)
-errCheck(resp_dict, expected=[201,409])
-logging.info(f"{prov_req['safeAdmins']}, {prov_req['safeFullUsers']} and {prov_req['syncMembers']} are members of safe {prov_req['safe_name']}")
+print("Getting SecretsHub target store ID...")
+resp_dict = getSHTargetStoreId(prov_req)
+errCheck(resp_dict)
+logging.info(resp_dict["response_body"])
+prov_req["target_store_id"] = resp_dict["store_id"]
+print("Target store ID: ", prov_req["target_store_id"])
+
+print("Getting SecretsHub filter ID...")
+resp_dict = getSHFilterForSafe(prov_req)
+errCheck(resp_dict,[200,201])
+logging.info(resp_dict["response_body"])
+prov_req["filter_id"] = resp_dict["filter_id"]
+print("Safe filter ID: ", prov_req["filter_id"])
+
+print("Getting SecretsHub sync policy ID...")
+resp_dict = getSHSyncPolicy(prov_req)
+errCheck(resp_dict,[200,201])
+logging.info(resp_dict["response_body"])
+prov_req["policy_id"] = resp_dict["policy_id"]
+print("Sync policy ID: ", prov_req["policy_id"])
 
 sys.exit(0)

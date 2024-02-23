@@ -1,0 +1,30 @@
+#!/bin/bash 
+set -euo pipefail
+
+source ./onboard-framework.sh
+
+main() {
+  build_image
+  start_container
+  docker exec -it $ONBOARD_DEMO_CONTAINER bash
+}
+
+build_image() {
+  cd build
+    ./build.sh
+  cd .. 
+}
+
+start_container() {
+    docker run -d			\
+    --name $ONBOARD_DEMO_CONTAINER	\
+    -e "TERM=xterm"			\
+    --restart always			\
+    --entrypoint "sh" 			\
+    -v $(pwd)/framework:/home/demo	\
+    -p "$ONBOARD_PORT:8000"		\
+    $ONBOARD_DEMO_IMAGE			\
+    -c "sleep infinity"
+}
+
+main $@

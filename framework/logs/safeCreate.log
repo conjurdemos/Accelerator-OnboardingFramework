@@ -1,0 +1,3 @@
+INFO:root:safe_name: AWS-FEB2-240222-TST-APR
+INFO:root:Missing one of CYBR_SUBDOMAIN, CYBR_USERNAME, CYBR_PASSWORD in environment variables.
+ERROR:root:./safeCreate.py: Missing one of CYBR_SUBDOMAIN, CYBR_USERNAME, CYBR_PASSWORD in environment variables.
