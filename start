@@ -1,0 +1,29 @@
+#!/bin/bash 
+set -euo pipefail
+
+source ./framework-config.sh
+
+main() {
+  build_image
+  start_container
+}
+
+build_image() {
+  cd build
+    ./build.sh
+  cd .. 
+}
+
+start_container() {
+    docker run -d			\
+    --name $ONBOARD_DEMO_CONTAINER	\
+    -e "TERM=xterm"			\
+    --restart always			\
+    --entrypoint "sh" 			\
+    -v $(pwd)/framework:/home/demo	\
+    -p "$ONBOARD_PORT:8000"		\
+    $ONBOARD_DEMO_IMAGE			\
+    -c "cd framework; uvicorn endpoints:app --reload --host 0.0.0.0"
+}
+
+main $@

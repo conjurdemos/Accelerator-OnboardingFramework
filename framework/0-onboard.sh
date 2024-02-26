@@ -3,7 +3,7 @@ pushd bin
 ./package.sh
 popd
 export PYTHONPATH=$PYTHONPATH:./lib
-rm logs/*
+rm ./logs/*
 
 ./safeCreate.py ./requests/safereq.json
 if [ $? -ne 0 ]; then exit; fi 

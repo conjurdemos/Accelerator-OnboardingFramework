@@ -1,0 +1,3 @@
+source ./framework-config.sh
+echo "Stopping and removing framework container..."
+docker stop axlr8r-onboard && docker rm axlr8r-onboard

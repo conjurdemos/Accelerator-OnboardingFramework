@@ -1,13 +1,13 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 
 import json
 import sys
 import logging
 from cybronboard import *
 
-logfile = "./logs/accountCreate.log"
-loglevel = logging.INFO          # BEWARE: DEBUG loglevel might leak secrets!
-logfmode = 'w'  		              # w = overwrite, a = append
+logfile = "./logs/safeCreate.log"
+loglevel = logging.INFO       # BEWARE! DEBUG loglevel can leak secrets!
+logfmode = 'w'                # w = overwrite, a = append
 
 # MAIN =================================================
 logging.basicConfig(filename=logfile, encoding='utf-8', level=loglevel, filemode=logfmode)
@@ -24,17 +24,6 @@ except IOError:
     print(err_msg)
     logging.error(err_msg)
     sys.exit(-1)
-
-print("Determining platform ID based on provisioning request values...")
-resp_dict = getPlatformId(prov_req)
-errCheck(resp_dict)
-logging.info(f"platform_id: {resp_dict['platform_id']}")
-prov_req["platform_id"] = resp_dict["platform_id"]
-
-print("Validating request account properties with platform properties...")
-resp_dict = validateRequestWithPlatform(prov_req)
-errCheck(resp_dict)
-logging.info(f"Request validated with platform.")
 
 print("Generating safe name based on provisioning request values...")
 resp_dict = getSafeName(prov_req)
@@ -54,9 +43,14 @@ logging.info("Successfully authenticated.")
 prov_req["session_token"] = resp_dict["session_token"]
 prov_req["cybr_subdomain"] = admin_creds["cybr_subdomain"]
 
-print(f"Creating account...")
-resp_dict = createAccount(prov_req)
+print(f"Creating safe...")
+resp_dict = createSafe(prov_req)
 errCheck(resp_dict, expected=[201,409])
-logging.info("Account exists in safe.")
+logging.info(f"safe_name: {prov_req['safe_name']} was created or already exists.")
+
+print("Adding members...")
+resp_dict = addSafeMembers(prov_req)
+errCheck(resp_dict, expected=[201,409])
+logging.info(f"{prov_req['safeAdmins']}, {prov_req['safeFullUsers']} and {prov_req['syncMembers']} are members of safe {prov_req['safe_name']}")
 
 sys.exit(0)
