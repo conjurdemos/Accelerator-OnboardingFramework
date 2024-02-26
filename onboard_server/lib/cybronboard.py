@@ -120,6 +120,9 @@ def addSafeMembers(prov_req):
     session_token = prov_req["session_token"]
     safe_name = prov_req["safe_name"]
 
+    status_code = 201
+    response_body = "Safe members processed."
+
     # add safe admins first
     safe_admins = prov_req.get("safeAdmins", None)
     if safe_admins is not None:
@@ -526,56 +529,6 @@ def deleteSafe(prov_req):
     return_dict["status_code"] = status_code
     return_dict["response_body"] = response_body
     return return_dict#############################################################################
-#############################################################################
-# deleteAccount.py
-
-import sys
-import logging
-
-def errCheck(resp_dict, expected=[200]):
-    if resp_dict["status_code"] not in expected:
-        err_msg = f"{sys.argv[0]}: {resp_dict['response_body']}"
-        print(err_msg)
-        logging.error(err_msg)
-        sys.exit(-1)
-    return False
-#############################################################################
-#############################################################################
-# getAuthnCreds.py
-
-import os
-import sys
-import logging
-
-# Pulls Pcloud admin cred values from environment variables.
-# Returns creds in dictionary.
-
-# This function encapsulates admin cred are retrieval,
-#   to keep that separate from and to simplify authentication.
-
-def getAuthnCreds():
-    logging.debug("================ getAuthnCreds() ================")
-    status_code = 200
-    response_body = "Authentication credentials retrieved."
-    admin_creds = {
-        "cybr_subdomain": os.environ.get("CYBR_SUBDOMAIN",None),
-        "cybr_username": os.environ.get("CYBR_USERNAME",None),
-        "cybr_password": os.environ.get("CYBR_PASSWORD",None),
-    }
-    # Validate all creds have a value, if not exit with error code
-    none_keys = [key for key, value in admin_creds.items() if value is None]
-    if none_keys:
-        status_code = 400
-        response_body = "Missing one of CYBR_SUBDOMAIN, CYBR_USERNAME, CYBR_PASSWORD in environment variables."
-
-    logging.info(response_body)
-
-    return_dict = {}
-    return_dict["status_code"] = status_code
-    return_dict["response_body"] = response_body
-    return_dict["admin_creds"] = admin_creds
-    return return_dict
-#############################################################################
 #############################################################################
 # getPlatformId.py
 
@@ -1031,9 +984,18 @@ def getSHTargetStoreId(prov_req):
 import json
 import logging
 
-# Generates safe name base on provisioning record values and rules
-#  defined in ./json/safenamerules.json (path is relative to function
-#  calling this function).
+'''
+ The design intention of this function is to automate CyberArk's
+ recommended best-practices for safe naming described in this document:
+ https://cyberark.my.site.com/s/article/Safe-Naming-Convention-Best-Practices
+
+ Recognizing that that best-practice is just a starting point, thise
+ function supports adaptations of the practice per customer requirements.
+
+ It generates a safe name based on values in the provisioning request and
+  rules defined in ./json/safenamerules.json (path is relative to function
+  calling this function).
+'''
 
 def getSafeName(prov_req):
 
@@ -1125,6 +1087,7 @@ def validateRequestWithPlatform(prov_req):
             return_dict = {}
             return_dict["status_code"] = 400
             return_dict["response_body"] = err_msg
+            return return_dict
 
     # load platform dictionary from json file created with compileplats.py
     # PLATFORM_FILE is a global constant defined in getPlatform.py

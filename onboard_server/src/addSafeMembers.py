@@ -120,6 +120,9 @@ def addSafeMembers(prov_req):
     session_token = prov_req["session_token"]
     safe_name = prov_req["safe_name"]
 
+    status_code = 201
+    response_body = "Safe members processed."
+
     # add safe admins first
     safe_admins = prov_req.get("safeAdmins", None)
     if safe_admins is not None:

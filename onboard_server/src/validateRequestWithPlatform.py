@@ -24,6 +24,7 @@ def validateRequestWithPlatform(prov_req):
             return_dict = {}
             return_dict["status_code"] = 400
             return_dict["response_body"] = err_msg
+            return return_dict
 
     # load platform dictionary from json file created with compileplats.py
     # PLATFORM_FILE is a global constant defined in getPlatform.py

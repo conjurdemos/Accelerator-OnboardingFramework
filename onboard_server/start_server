@@ -1,11 +1,13 @@
 #!/bin/bash 
 set -euo pipefail
 
-source ./framework-config.sh
+source ./server-config.sh
 
 main() {
   build_image
+  echo "Starting onboarding framework container..."
   start_container
+  docker logs $ONBOARD_DEMO_CONTAINER -f
 }
 
 build_image() {
@@ -20,10 +22,10 @@ start_container() {
     -e "TERM=xterm"			\
     --restart always			\
     --entrypoint "sh" 			\
-    -v $(pwd)/framework:/home/demo	\
+    -v $(pwd):/home/demo		\
     -p "$ONBOARD_PORT:8000"		\
     $ONBOARD_DEMO_IMAGE			\
-    -c "cd framework; uvicorn endpoints:app --reload --host 0.0.0.0"
+    -c "export PYTHONPATH=\$PYTHONPATH:./lib; uvicorn onboard-main:app --reload --host 0.0.0.0"
 }
 
 main $@

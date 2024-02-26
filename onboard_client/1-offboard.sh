@@ -1,3 +1,3 @@
 #!/bin/bash
 export PYTHONPATH=$PYTHONPATH:./lib
-./safeDelete.py ./requests/safereq.json
+python3 ./offboard.py ./requests/acctreq.json
