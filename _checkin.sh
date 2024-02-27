@@ -3,7 +3,7 @@ if [[ $# < 1 ]]; then
   echo "Add quoted comment for commit."
   exit -1
 fi
-gitleaks > .gitleaks 2>\&1
+gitleaks > .gitleaks 2>&1
 rm onboard_client/logs/* > /dev/null 2>\&1
 rm -rf onboard_client/lib/__pycache__ > /dev/null 2>\&1
 rm onboard_server/logs/* > /dev/null 2>\&1
