@@ -1,0 +1,686 @@
+{
+  "MySQL-ASM": {
+    "id": "MySQL-ASM",
+    "systemtype": "Database",
+    "searchpairs": {
+      "domain": "aws",
+      "type": "database",
+      "subtype": "mysql"
+    },
+    "required": [
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "DSN",
+      "ADDRESS",
+      "PORT",
+      "DATABASE",
+      "DESCRIPTION",
+      "SECRETNAMEINSECRETSTORE",
+      "ENGINE",
+      "HOST",
+      "DBNAME",
+      "DBINSTANCEIDENTIFIER"
+    ]
+  },
+  "PostgreSQL-ASM": {
+    "id": "PostgreSQL-ASM",
+    "systemtype": "Database",
+    "searchpairs": {
+      "domain": "aws",
+      "type": "database",
+      "subtype": "postgres"
+    },
+    "required": [
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "DSN",
+      "ADDRESS",
+      "PORT",
+      "DATABASE",
+      "ENGINE",
+      "HOST",
+      "DBINSTANCEIDENTIFIER",
+      "SECRETNAMEINSECRETSTORE"
+    ]
+  },
+  "Sybase": {
+    "id": "Sybase",
+    "systemtype": "Database",
+    "searchpairs": {
+      "domain": "onp",
+      "type": "database",
+      "subtype": "sybase"
+    },
+    "required": [
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "DSN",
+      "ADDRESS",
+      "PORT",
+      "DATABASE"
+    ]
+  },
+  "DB2SSH-ASM": {
+    "id": "DB2SSH-ASM",
+    "systemtype": "Database",
+    "searchpairs": {
+      "domain": "aws",
+      "type": "database",
+      "subtype": "db2"
+    },
+    "required": [
+      "USERNAME",
+      "ADDRESS"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "ADDRESS",
+      "ENGINE",
+      "HOST",
+      "DBINSTANCEIDENTIFIER",
+      "SECRETNAMEINSECRETSTORE"
+    ]
+  },
+  "AuroraPostgresSQLRDS-ASM": {
+    "id": "AuroraPostgresSQLRDS-ASM",
+    "systemtype": "Database",
+    "searchpairs": {
+      "domain": "aurora",
+      "type": "database",
+      "subtype": "postgres"
+    },
+    "required": [
+      "USERNAME",
+      "ADDRESS",
+      "DATABASE"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "ADDRESS",
+      "DATABASE",
+      "PORT",
+      "ENGINE",
+      "HOST",
+      "DBINSTANCEIDENTIFIER",
+      "SECRETNAMEINSECRETSTORE"
+    ]
+  },
+  "Oracle-ASM": {
+    "id": "Oracle-ASM",
+    "systemtype": "Database",
+    "searchpairs": {
+      "domain": "aws",
+      "type": "database",
+      "subtype": "oracle"
+    },
+    "required": [
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "DSN",
+      "ADDRESS",
+      "PORT",
+      "DATABASE",
+      "SECRETNAMEINSECRETSTORE",
+      "ENGINE",
+      "HOST",
+      "DBINSTANCEIDENTIFIER"
+    ]
+  },
+  "InformixUnixSSH": {
+    "id": "InformixUnixSSH",
+    "systemtype": "Database",
+    "searchpairs": {},
+    "required": [
+      "USERNAME",
+      "ADDRESS"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "ADDRESS"
+    ]
+  },
+  "Oracle-Dual": {
+    "id": "Oracle-Dual",
+    "systemtype": "Database",
+    "searchpairs": {},
+    "required": [
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "DSN",
+      "ADDRESS",
+      "PORT",
+      "DATABASE",
+      "VIRTUALUSERNAME",
+      "INDEX",
+      "DUALACCOUNTSTATUS"
+    ]
+  },
+  "MySQL": {
+    "id": "MySQL",
+    "systemtype": "Database",
+    "searchpairs": {
+      "domain": "onp",
+      "type": "database",
+      "subtype": "mysql"
+    },
+    "required": [
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "DSN",
+      "ADDRESS",
+      "PORT",
+      "DATABASE",
+      "DESCRIPTION",
+      "SECRETNAMEINSECRETSTORE"
+    ]
+  },
+  "DB2UnixSSH": {
+    "id": "DB2UnixSSH",
+    "systemtype": "Database",
+    "searchpairs": {},
+    "required": [
+      "USERNAME",
+      "ADDRESS"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "ADDRESS"
+    ]
+  },
+  "MSSql-ASM": {
+    "id": "MSSql-ASM",
+    "systemtype": "Database",
+    "searchpairs": {
+      "domain": "aws",
+      "type": "database",
+      "subtype": "mssql"
+    },
+    "required": [
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "DSN",
+      "ADDRESS",
+      "PORT",
+      "DATABASE",
+      "RECONCILEISWINACCOUNT",
+      "CLIENT",
+      "SECRETNAMEINSECRETSTORE",
+      "ENGINE",
+      "HOST",
+      "DBINSTANCEIDENTIFIER"
+    ]
+  },
+  "MSSql": {
+    "id": "MSSql",
+    "systemtype": "Database",
+    "searchpairs": {
+      "domain": "onp",
+      "type": "database",
+      "subtype": "mysql"
+    },
+    "required": [
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "DSN",
+      "ADDRESS",
+      "PORT",
+      "DATABASE",
+      "RECONCILEISWINACCOUNT",
+      "CLIENT",
+      "SECRETNAMEINSECRETSTORE"
+    ]
+  },
+  "MySQL-Dual": {
+    "id": "MySQL-Dual",
+    "systemtype": "Database",
+    "searchpairs": {
+      "domain": "onp",
+      "type": "database",
+      "subtype": "mysql-dual"
+    },
+    "required": [
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "DSN",
+      "ADDRESS",
+      "PORT",
+      "DATABASE",
+      "VIRTUALUSERNAME",
+      "INDEX",
+      "DUALACCOUNTSTATUS"
+    ]
+  },
+  "SAPHANA": {
+    "id": "SAPHANA",
+    "systemtype": "Database",
+    "searchpairs": {},
+    "required": [
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "DSN",
+      "ADDRESS",
+      "PORT",
+      "DATABASE",
+      "RECONCILEISWINACCOUNT"
+    ]
+  },
+  "MariaDB-ASM": {
+    "id": "MariaDB-ASM",
+    "systemtype": "Database",
+    "searchpairs": {
+      "domain": "aws",
+      "type": "database",
+      "subtype": "mariadb"
+    },
+    "required": [
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "DSN",
+      "ADDRESS",
+      "PORT",
+      "DATABASE",
+      "ENGINE",
+      "HOST",
+      "DBNAME",
+      "DBINSTANCEIDENTIFIER",
+      "SECRETNAMEINSECRETSTORE"
+    ]
+  },
+  "Oracle": {
+    "id": "Oracle",
+    "systemtype": "Database",
+    "searchpairs": {
+      "domain": "onp",
+      "type": "database",
+      "subtype": "oracle"
+    },
+    "required": [
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "DSN",
+      "ADDRESS",
+      "PORT",
+      "DATABASE",
+      "SECRETNAMEINSECRETSTORE"
+    ]
+  },
+  "AWSAccessKeys": {
+    "id": "AWSAccessKeys",
+    "systemtype": "Amazon+web+services",
+    "searchpairs": {
+      "domain": "aws",
+      "type": "Amazon web services",
+      "subtype": "mysql"
+    },
+    "required": [
+      "USERNAME",
+      "AWSACCESSKEYID",
+      "AWSACCOUNTID"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "AWSACCESSKEYID",
+      "AWSACCOUNTID",
+      "AWSACCOUNTALIASNAME",
+      "REGION"
+    ]
+  },
+  "SH1": {
+    "id": "SH1",
+    "systemtype": "Imported+Platforms",
+    "searchpairs": {},
+    "required": [
+      "ADDRESS",
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "ADDRESS",
+      "USERNAME",
+      "PORT"
+    ]
+  },
+  "City": {
+    "id": "City",
+    "systemtype": "Imported+Platforms",
+    "searchpairs": {},
+    "required": [],
+    "allkeys": [
+      "SECRET"
+    ]
+  },
+  "ThalesUser": {
+    "id": "ThalesUser",
+    "systemtype": "Imported+Platforms",
+    "searchpairs": {},
+    "required": [
+      "ADDRESS",
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "ADDRESS",
+      "USERNAME"
+    ]
+  },
+  "testName": {
+    "id": "testName",
+    "systemtype": "Imported+Platforms",
+    "searchpairs": {},
+    "required": [
+      "DNS"
+    ],
+    "allkeys": [
+      "SECRET",
+      "DNS",
+      "ADDRESS",
+      "MYPASS"
+    ]
+  },
+  "BusinessWebsite": {
+    "id": "BusinessWebsite",
+    "systemtype": "Website",
+    "searchpairs": {},
+    "required": [
+      "ITEMNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "ITEMNAME",
+      "USERNAME",
+      "URL",
+      "TAGS",
+      "NOTES"
+    ]
+  },
+  "RotationGroup-Default": {
+    "id": "RotationGroup-Default",
+    "systemtype": "RotationGroup-Default",
+    "searchpairs": {},
+    "required": [],
+    "allkeys": [
+      "SECRET",
+      "CURRIND",
+      "INDEX",
+      "DUALACCOUNTSTATUS",
+      "VIRTUALUSERNAME"
+    ]
+  },
+  "SecretsHubPlatform": {
+    "id": "SecretsHubPlatform",
+    "systemtype": "SecretsHub",
+    "searchpairs": {},
+    "required": [],
+    "allkeys": [
+      "SECRET",
+      "SECRETNAMEINSECRETSTORE"
+    ]
+  },
+  "WinDesktopLocal": {
+    "id": "WinDesktopLocal",
+    "systemtype": "Windows",
+    "searchpairs": {},
+    "required": [
+      "ADDRESS",
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "ADDRESS",
+      "USERNAME",
+      "LOGONDOMAIN",
+      "LOCATION",
+      "OWNERNAME"
+    ]
+  },
+  "SFTP": {
+    "id": "SFTP",
+    "systemtype": "*NIX",
+    "searchpairs": {},
+    "required": [],
+    "allkeys": [
+      "SECRET",
+      "COMMENT",
+      "CONNECTIONTIMEOUT",
+      "PORT",
+      "PUBLICSSHKEYPATH",
+      "USESUDOONRECONCILE",
+      "STANDARDPROMPT",
+      "POPULATEIFNOTEXIST",
+      "COMMANDEXECUTIONTIMEOUT"
+    ]
+  },
+  "WinDomain": {
+    "id": "WinDomain",
+    "systemtype": "Windows",
+    "searchpairs": {},
+    "required": [
+      "ADDRESS",
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "ADDRESS",
+      "USERNAME",
+      "LOGONDOMAIN",
+      "USERDN",
+      "PORT"
+    ]
+  },
+  "MigrationPlatform": {
+    "id": "MigrationPlatform",
+    "systemtype": "*NIX",
+    "searchpairs": {},
+    "required": [
+      "ADDRESS",
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "ADDRESS",
+      "USERNAME",
+      "USESUDOONRECONCILE"
+    ]
+  },
+  "UnixSSHKeys": {
+    "id": "UnixSSHKeys",
+    "systemtype": "*NIX",
+    "searchpairs": {},
+    "required": [
+      "ADDRESS",
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "ADDRESS",
+      "USERNAME",
+      "COMMENT",
+      "CONNECTIONTIMEOUT",
+      "PORT",
+      "PUBLICSSHKEYPATH",
+      "USESUDOONRECONCILE",
+      "STANDARDPROMPT",
+      "POPULATEIFNOTEXIST",
+      "COMMANDEXECUTIONTIMEOUT"
+    ]
+  },
+  "WinServerLocal": {
+    "id": "WinServerLocal",
+    "systemtype": "Windows",
+    "searchpairs": {},
+    "required": [
+      "ADDRESS",
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "ADDRESS",
+      "USERNAME",
+      "LOGONDOMAIN",
+      "LOCATION",
+      "OWNERNAME"
+    ]
+  },
+  "UnixSSH": {
+    "id": "UnixSSH",
+    "systemtype": "*NIX",
+    "searchpairs": {},
+    "required": [
+      "ADDRESS",
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "ADDRESS",
+      "USERNAME",
+      "USESUDOONRECONCILE"
+    ]
+  },
+  "test": {
+    "id": "test",
+    "systemtype": "Windows",
+    "searchpairs": {},
+    "required": [
+      "ADDRESS",
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "ADDRESS",
+      "USERNAME",
+      "LOGONDOMAIN",
+      "LOCATION",
+      "OWNERNAME"
+    ]
+  },
+  "DemoApp": {
+    "id": "DemoApp",
+    "systemtype": "*NIX",
+    "searchpairs": {},
+    "required": [
+      "ADDRESS",
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "ADDRESS",
+      "USERNAME",
+      "USESUDOONRECONCILE"
+    ]
+  },
+  "CyberArkPTA": {
+    "id": "CyberArkPTA",
+    "systemtype": "Application",
+    "searchpairs": {},
+    "required": [
+      "ADDRESS",
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "ADDRESS",
+      "USERNAME",
+      "PORT",
+      "IGNORECERTIFICATE"
+    ]
+  },
+  "MyAPP": {
+    "id": "MyAPP",
+    "systemtype": "Application",
+    "searchpairs": {},
+    "required": [
+      "USERNAME",
+      "MYPASS"
+    ],
+    "allkeys": [
+      "SECRET",
+      "USERNAME",
+      "MYPASS",
+      "USERTYPE",
+      "MYNAME",
+      "SECRETNAMEINSECRETSTORE"
+    ]
+  },
+  "DummyPlatform": {
+    "id": "DummyPlatform",
+    "systemtype": "Application",
+    "searchpairs": {},
+    "required": [
+      "ADDRESS",
+      "USERNAME"
+    ],
+    "allkeys": [
+      "SECRET",
+      "ADDRESS",
+      "USERNAME"
+    ]
+  },
+  "RGroupTest": {
+    "id": "RGroupTest",
+    "systemtype": "Misc",
+    "searchpairs": {},
+    "required": [],
+    "allkeys": [
+      "SECRET"
+    ]
+  },
+  "CustomType01": {
+    "id": "CustomType01",
+    "systemtype": "Misc",
+    "searchpairs": {},
+    "required": [],
+    "allkeys": [
+      "SECRET"
+    ]
+  },
+  "SampleGroup": {
+    "id": "SampleGroup",
+    "systemtype": "Misc",
+    "searchpairs": {},
+    "required": [],
+    "allkeys": [
+      "SECRET"
+    ]
+  }
+}

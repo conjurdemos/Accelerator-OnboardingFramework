@@ -1,0 +1,4 @@
+onboard_client/lib/__pycache__
+onboard_client/logs/*
+onboard_server/lib/__pycache__
+onboard_server/logs/*

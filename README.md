@@ -9,8 +9,8 @@ Admin credentials are currently passed as environment variables (see ./src/getAu
  - CYBR_USERNAME - name of oauth2 service user
  - CYBR_PASSWORD - password of oauth2 service user
 
-![safe-request](https://github.com/jodyhuntatx/Onboarding-Prototype/blob/main/img/safe-request.png?raw=true)
-![acct-request](https://github.com/jodyhuntatx/Onboarding-Prototype/blob/main/img/acct-request.png?raw=true)
-![platforms](https://github.com/jodyhuntatx/Onboarding-Prototype/blob/main/img/platforms.png?raw=true)
-![safenamerules](https://github.com/jodyhuntatx/Onboarding-Prototype/blob/main/img/safenamerules.png?raw=true)
-![all-in-one](https://github.com/jodyhuntatx/Onboarding-Prototype/blob/main/img/all-in-one.png?raw=true)
+![safe-request](https://github.com/conjurdemos/Accelerator-OnboardingFramework/blob/jody/imgs/safe-request.png?raw=true)
+![acct-request](https://github.com/conjurdemos/Accelerator-OnboardingFramework/blob/jody/imgs/acct-request.png?raw=true)
+![platforms](https://github.com/conjurdemos/Accelerator-OnboardingFramework/blob/jody/imgs/platforms.png?raw=true)
+![safenamerules](https://github.com/conjurdemos/Accelerator-OnboardingFramework/blob/jody/imgs/safenamerules.png?raw=true)
+![all-in-one](https://github.com/conjurdemos/Accelerator-OnboardingFramework/blob/jody/imgs/all-in-one.png?raw=true)

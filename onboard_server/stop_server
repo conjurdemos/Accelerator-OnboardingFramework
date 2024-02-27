@@ -1,0 +1,3 @@
+source ./server-config.sh
+echo "Stopping and removing onboarding framework container..."
+docker stop axlr8r-onboard && docker rm axlr8r-onboard
