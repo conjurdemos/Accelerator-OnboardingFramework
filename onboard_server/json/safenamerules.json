@@ -1,6 +1,40 @@
 [
     {
-        "keyname": "platform",
+        "keyname": "env",
+        "maptype": "valuemap",
+        "valuemap": [
+            {
+                "inputs": [
+                    "DEV",
+                    "DEVELOPMENT"
+                ],
+                "output": "D"
+            },
+            {
+                "inputs": [
+                    "TST",
+                    "TEST"
+                ],
+                "output": "T"
+            },
+            {
+                "inputs": [
+                    "UAT",
+                    "ACCEPTANCE"
+                ],
+                "output": "U"
+            },
+            {
+                "inputs": [
+                    "PRD",
+                    "PRODUCTION"
+                ],
+                "output": "P"
+            }
+        ]
+    },
+    {
+        "keyname": "domain",
         "maptype": "valuemap",
         "valuemap": [
             {
@@ -48,40 +82,7 @@
         "keyname": "billcode",
         "maptype": "literal"
     },
-    {
-        "keyname": "env",
-        "maptype": "valuemap",
-        "valuemap": [
-            {
-                "inputs": [
-                    "DEV",
-                    "DEVELOPMENT"
-                ],
-                "output": "DEV"
-            },
-            {
-                "inputs": [
-                    "TST",
-                    "TEST"
-                ],
-                "output": "TST"
-            },
-            {
-                "inputs": [
-                    "UAT",
-                    "ACCEPTANCE"
-                ],
-                "output": "UAT"
-            },
-            {
-                "inputs": [
-                    "PRD",
-                    "PRODUCTION"
-                ],
-                "output": "PRD"
-            }
-        ]
-    },
+
     {
         "keyname": "apprReqd",
         "maptype": "valuemap",

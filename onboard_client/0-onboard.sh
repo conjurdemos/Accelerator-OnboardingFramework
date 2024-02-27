@@ -1,4 +1,4 @@
 #!/bin/bash
 rm ./logs/*
 export PYTHONPATH=./lib
-python3 ./onboard.py ./requests/acctreq.json
+python3 ./onboard.py $1

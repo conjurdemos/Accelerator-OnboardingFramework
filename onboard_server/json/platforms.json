@@ -3,7 +3,7 @@
     "id": "MySQL-ASM",
     "systemtype": "Database",
     "searchpairs": {
-      "platform": "aws",
+      "domain": "aws",
       "type": "database",
       "subtype": "mysql"
     },
@@ -29,7 +29,7 @@
     "id": "PostgreSQL-ASM",
     "systemtype": "Database",
     "searchpairs": {
-      "platform": "aws",
+      "domain": "aws",
       "type": "database",
       "subtype": "postgres"
     },
@@ -53,7 +53,7 @@
     "id": "Sybase",
     "systemtype": "Database",
     "searchpairs": {
-      "platform": "onp",
+      "domain": "onp",
       "type": "database",
       "subtype": "sybase"
     },
@@ -73,7 +73,7 @@
     "id": "DB2SSH-ASM",
     "systemtype": "Database",
     "searchpairs": {
-      "platform": "aws",
+      "domain": "aws",
       "type": "database",
       "subtype": "db2"
     },
@@ -95,7 +95,7 @@
     "id": "AuroraPostgresSQLRDS-ASM",
     "systemtype": "Database",
     "searchpairs": {
-      "platform": "aurora",
+      "domain": "aurora",
       "type": "database",
       "subtype": "postgres"
     },
@@ -120,7 +120,7 @@
     "id": "Oracle-ASM",
     "systemtype": "Database",
     "searchpairs": {
-      "platform": "aws",
+      "domain": "aws",
       "type": "database",
       "subtype": "oracle"
     },
@@ -177,7 +177,7 @@
     "id": "MySQL",
     "systemtype": "Database",
     "searchpairs": {
-      "platform": "onp",
+      "domain": "onp",
       "type": "database",
       "subtype": "mysql"
     },
@@ -213,7 +213,7 @@
     "id": "MSSql-ASM",
     "systemtype": "Database",
     "searchpairs": {
-      "platform": "aws",
+      "domain": "aws",
       "type": "database",
       "subtype": "mssql"
     },
@@ -239,7 +239,7 @@
     "id": "MSSql",
     "systemtype": "Database",
     "searchpairs": {
-      "platform": "onp",
+      "domain": "onp",
       "type": "database",
       "subtype": "mysql"
     },
@@ -262,7 +262,7 @@
     "id": "MySQL-Dual",
     "systemtype": "Database",
     "searchpairs": {
-      "platform": "onp",
+      "domain": "onp",
       "type": "database",
       "subtype": "mysql-dual"
     },
@@ -302,7 +302,7 @@
     "id": "MariaDB-ASM",
     "systemtype": "Database",
     "searchpairs": {
-      "platform": "aws",
+      "domain": "aws",
       "type": "database",
       "subtype": "mariadb"
     },
@@ -327,7 +327,7 @@
     "id": "Oracle",
     "systemtype": "Database",
     "searchpairs": {
-      "platform": "onp",
+      "domain": "onp",
       "type": "database",
       "subtype": "oracle"
     },
@@ -348,7 +348,7 @@
     "id": "AWSAccessKeys",
     "systemtype": "Amazon+web+services",
     "searchpairs": {
-      "platform": "aws",
+      "domain": "aws",
       "type": "Amazon web services",
       "subtype": "mysql"
     },

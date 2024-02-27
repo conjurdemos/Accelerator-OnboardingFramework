@@ -18,17 +18,6 @@ PLATFORM_FILE = "./json/platforms.json"  # file with platform mapping k/v pairs
 def getPlatformId(prov_req):
     logging.debug("================ getPlatformId() ================")
 
-    # first ensure we have required request values
-    required_keys = ["cybr_subdomain", "session_token", "safe_name"]
-    for rkey in required_keys:
-        input_val = prov_req.get(rkey, None)
-        if input_val is None:
-            response_body = f"Request is missing key required for platform identification: {rkey}"
-            logging.error(response_body)
-            return_dict = {}
-            return_dict["status_code"] = 400
-            return_dict["response_body"] = response_body
-
     # load platform dictionary from json file created with compileplats.py
     try:
         with open(PLATFORM_FILE) as f_in:

@@ -522,6 +522,7 @@ def deleteSafe(prov_req):
             logging.debug(response_body)
             logging.debug(response.text)
 
+    logging.info(response_body)
     logging.debug("================ deleteSafe() ================")
     logging.debug(f"status_code: {status_code}\n\tresponse: {response_body}")
 
@@ -547,17 +548,6 @@ PLATFORM_FILE = "./json/platforms.json"  # file with platform mapping k/v pairs
 
 def getPlatformId(prov_req):
     logging.debug("================ getPlatformId() ================")
-
-    # first ensure we have required request values
-    required_keys = ["cybr_subdomain", "session_token", "safe_name"]
-    for rkey in required_keys:
-        input_val = prov_req.get(rkey, None)
-        if input_val is None:
-            response_body = f"Request is missing key required for platform identification: {rkey}"
-            logging.error(response_body)
-            return_dict = {}
-            return_dict["status_code"] = 400
-            return_dict["response_body"] = response_body
 
     # load platform dictionary from json file created with compileplats.py
     try:
@@ -989,10 +979,27 @@ import logging
  recommended best-practices for safe naming described in this document:
  https://cyberark.my.site.com/s/article/Safe-Naming-Convention-Best-Practices
 
- Recognizing that that best-practice is just a starting point, thise
- function supports adaptations of the practice per customer requirements.
+ - Name must be <= 28 characters long
+ - Format: E-LOC-GRP-TEC-SUB-AT-A where:
+ - E = Environment:
+    Production (P), Development (D), Testing (T), Q/A (Q), etc
+ - LOC = Geographical Location or domain:
+    Datacenter 1 (DC1), Datacenter 2 (DC2), California Datacenter (CA), etc
+ - GRP = Business Unit/Access Groups/Application:
+    Security Team (SEC), Engineering Team (ENG), Support Desk (SUP), Network Team Routers (NWR), Network Team Switches (NWS), etc
+ - TEC = Technology:
+    Server (SVR), Workstation (WKS), Network Device (NET), Database (DB), Mainframe (MF), Domain (DOM) etc
+ - SUB = Technology Subtype (flavor):
+    Windows (WIN), UNIX (UNX), Linux (LNX), HP-UX (HP), Cisco (CSC), SQL Database (SQL), Oracle Database (ORC)
+ - AT = Account Type:
+    Local Account (LA), Domain Account (DA), Local Service Account (LS), Domain Service Account (DS), Root (RT), Enable Account (EN), SQL SA Account (SA)
+ - A = Auto-Detection Enabled Safe   (required only if using auto-detection for local accounts
 
- It generates a safe name based on values in the provisioning request and
+ Recognizing that this best-practice is just a starting point, and that it
+ may not support non-human access conventions, this function supports
+ adaptations of the practice per customer requirements.
+
+ It generates a safe name based on values in the provisioning request per
   rules defined in ./json/safenamerules.json (path is relative to function
   calling this function).
 '''

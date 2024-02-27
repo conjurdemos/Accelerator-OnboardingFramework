@@ -44,6 +44,7 @@ def deleteSafe(prov_req):
             logging.debug(response_body)
             logging.debug(response.text)
 
+    logging.info(response_body)
     logging.debug("================ deleteSafe() ================")
     logging.debug(f"status_code: {status_code}\n\tresponse: {response_body}")
 

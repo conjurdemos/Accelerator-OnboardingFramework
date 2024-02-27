@@ -2,7 +2,7 @@
     "billcode": 240222,
     "project": "feb22test",
     "env": "test",
-    "platform": "aws",
+    "domain": "aws",
     "apprReqd": "True",
     "type": "database",
     "subtype": "postgres",

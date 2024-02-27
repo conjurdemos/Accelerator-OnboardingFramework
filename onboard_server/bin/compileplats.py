@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 
 '''
  This is a utility that pulls info about active CyberArk platforms
