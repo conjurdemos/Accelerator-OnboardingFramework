@@ -10,7 +10,7 @@ Admin credentials are currently passed as environment variables (see ./src/getAu
  - CYBR_PASSWORD - password of oauth2 service user
 
 ![safe-request](https://github.com/conjurdemos/Accelerator-OnboardingFramework/blob/main/imgs/safe-request.png?raw=true)
+![safenamerules](https://github.com/conjurdemos/Accelerator-OnboardingFramework/blob/main/imgs/safenamerules.png?raw=true)
 ![acct-request](https://github.com/conjurdemos/Accelerator-OnboardingFramework/blob/main/imgs/acct-request.png?raw=true)
 ![platforms](https://github.com/conjurdemos/Accelerator-OnboardingFramework/blob/main/imgs/platforms.png?raw=true)
-![safenamerules](https://github.com/conjurdemos/Accelerator-OnboardingFramework/blob/main/imgs/safenamerules.png?raw=true)
 ![all-in-one](https://github.com/conjurdemos/Accelerator-OnboardingFramework/blob/main/imgs/all-in-one.png?raw=true)

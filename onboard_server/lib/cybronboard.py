@@ -648,7 +648,7 @@ def getSHFilterForSafe(prov_req):
 
     # -------------------------------------------
     # first ensure we have required request values
-    required_keys = ["cybr_subdomain", "session_token", "safe_name", "source_store_id"]
+    required_keys = ["cybr_subdomain", "session_token", "safe_name", "sstore_id"]
     for rkey in required_keys:
         input_val = prov_req.get(rkey, None)
         if input_val is None:
@@ -657,11 +657,12 @@ def getSHFilterForSafe(prov_req):
             return_dict = {}
             return_dict["status_code"] = 400
             return_dict["response_body"] = response_body
+            return return_dict
 
     cybr_subdomain = prov_req["cybr_subdomain"]
     session_token = prov_req["session_token"]
     safe_name = prov_req["safe_name"]
-    source_store_id = prov_req["source_store_id"]
+    source_store_id = prov_req["sstore_id"]
 
     filter_id = ""
     status_code = 0
@@ -762,7 +763,7 @@ def getSHSourceStoreId(prov_req):
     return_dict = {}
     return_dict["status_code"] = status_code
     return_dict["response_body"] = response_body
-    return_dict["store_id"] = sstore_id
+    return_dict["sstore_id"] = sstore_id
     return return_dict#############################################################################
 #############################################################################
 # getSHSyncPolicy.py
@@ -821,8 +822,8 @@ def getSHSyncPolicy(prov_req):
     required_keys = [
         "cybr_subdomain",
         "session_token",
-        "source_store_id",
-        "target_store_id",
+        "sstore_id",
+        "tstore_id",
         "filter_id",
     ]
     for rkey in required_keys:
@@ -836,8 +837,8 @@ def getSHSyncPolicy(prov_req):
 
     cybr_subdomain = prov_req["cybr_subdomain"]
     session_token = prov_req["session_token"]
-    sstore_id = prov_req["source_store_id"]
-    tstore_id = prov_req["target_store_id"]
+    sstore_id = prov_req["sstore_id"]
+    tstore_id = prov_req["tstore_id"]
     filter_id = prov_req["filter_id"]
 
     policy_id = ""
@@ -964,7 +965,7 @@ def getSHTargetStoreId(prov_req):
     return_dict = {}
     return_dict["status_code"] = status_code
     return_dict["response_body"] = response_body
-    return_dict["store_id"] = tstore_id
+    return_dict["tstore_id"] = tstore_id
     return return_dict
 
 #############################################################################

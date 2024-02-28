@@ -46,7 +46,7 @@ def getSHFilterForSafe(prov_req):
 
     # -------------------------------------------
     # first ensure we have required request values
-    required_keys = ["cybr_subdomain", "session_token", "safe_name", "source_store_id"]
+    required_keys = ["cybr_subdomain", "session_token", "safe_name", "sstore_id"]
     for rkey in required_keys:
         input_val = prov_req.get(rkey, None)
         if input_val is None:
@@ -55,11 +55,12 @@ def getSHFilterForSafe(prov_req):
             return_dict = {}
             return_dict["status_code"] = 400
             return_dict["response_body"] = response_body
+            return return_dict
 
     cybr_subdomain = prov_req["cybr_subdomain"]
     session_token = prov_req["session_token"]
     safe_name = prov_req["safe_name"]
-    source_store_id = prov_req["source_store_id"]
+    source_store_id = prov_req["sstore_id"]
 
     filter_id = ""
     status_code = 0

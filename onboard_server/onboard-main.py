@@ -5,7 +5,7 @@ from fastapi import FastAPI, Body
 from cybronboard import *
 
 logfile = "./logs/onboard-server.log"
-loglevel = logging.INFO       # BEWARE! DEBUG loglevel can leak secrets!
+loglevel = logging.DEBUG       # BEWARE! DEBUG loglevel can leak secrets!
 logfmode = 'w'                # w = overwrite, a = append
 logging.basicConfig(filename=logfile, encoding='utf-8', level=loglevel, filemode=logfmode)
 
@@ -27,6 +27,7 @@ def _validateRequestWithPlatform(prov_req: dict = Body(...)):
 def _authnCyberark(admin_creds: dict = Body(...)):
     return authnCyberark(admin_creds)
 
+# Vault state-changing endpoints
 @app.post("/createsafe")
 def _createSafe(prov_req: dict = Body(...)):
     return createSafe(prov_req)
@@ -42,3 +43,22 @@ def _addSafeMembers(prov_req: dict = Body(...)):
 @app.post("/createaccount")
 def _createAccount(prov_req: dict = Body(...)):
     return createAccount(prov_req)
+
+# Secrets Hub endpoints
+# Source & Target stores must already exist
+@app.get("/getshsourcestoreid")
+def _getSHSourceStoreId(prov_req: dict = Body(...)):
+    return getSHSourceStoreId(prov_req)
+
+@app.get("/getshtargetstoreid")
+def _getSHTargetStoreId(prov_req: dict = Body(...)):
+    return getSHTargetStoreId(prov_req)
+
+# Filter & Policy will be created if they do not exist
+@app.post("/createshfilterforsafe")
+def _getSHFilterForSafe(prov_req: dict = Body(...)):
+    return getSHFilterForSafe(prov_req)
+
+@app.post("/createshsyncpolicy")
+def _getSHSyncPolicy(prov_req: dict = Body(...)):
+    return getSHSyncPolicy(prov_req)

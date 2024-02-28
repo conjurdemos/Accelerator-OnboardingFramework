@@ -60,5 +60,5 @@ def getSHSourceStoreId(prov_req):
     return_dict = {}
     return_dict["status_code"] = status_code
     return_dict["response_body"] = response_body
-    return_dict["store_id"] = sstore_id
+    return_dict["sstore_id"] = sstore_id
     return return_dict

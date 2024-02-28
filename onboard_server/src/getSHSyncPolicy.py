@@ -56,8 +56,8 @@ def getSHSyncPolicy(prov_req):
     required_keys = [
         "cybr_subdomain",
         "session_token",
-        "source_store_id",
-        "target_store_id",
+        "sstore_id",
+        "tstore_id",
         "filter_id",
     ]
     for rkey in required_keys:
@@ -71,8 +71,8 @@ def getSHSyncPolicy(prov_req):
 
     cybr_subdomain = prov_req["cybr_subdomain"]
     session_token = prov_req["session_token"]
-    sstore_id = prov_req["source_store_id"]
-    tstore_id = prov_req["target_store_id"]
+    sstore_id = prov_req["sstore_id"]
+    tstore_id = prov_req["tstore_id"]
     filter_id = prov_req["filter_id"]
 
     policy_id = ""

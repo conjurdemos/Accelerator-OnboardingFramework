@@ -26,6 +26,7 @@
         "engine": "postgres",
         "host": "foo.bar.baz",
         "port": "5432",
-        "dbInstanceIdentifier": "cluster2"
+        "dbInstanceIdentifier": "cluster2",
+	"SecretNameInSecretStore": "TuesdayDemo/MySQL-RDS"
     }
 }

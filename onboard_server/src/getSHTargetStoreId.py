@@ -78,5 +78,5 @@ def getSHTargetStoreId(prov_req):
     return_dict = {}
     return_dict["status_code"] = status_code
     return_dict["response_body"] = response_body
-    return_dict["store_id"] = tstore_id
+    return_dict["tstore_id"] = tstore_id
     return return_dict
