@@ -4,9 +4,11 @@ if [[ $# < 1 ]]; then
   exit -1
 fi
 gitleaks detect > .gitleaks 2>&1
-rm onboard_client/logs/* > /dev/null 2>\&1
+rm -f onboard_client/maintenance/logs/* > /dev/null 2>\&1
+rm -f onboard_client/logs/* > /dev/null 2>\&1
 rm -rf onboard_client/lib/__pycache__ > /dev/null 2>\&1
-rm onboard_server/logs/* > /dev/null 2>\&1
+rm -f onboard_server/logs/* > /dev/null 2>\&1
+rm -rf onboard_server/__pycache__ > /dev/null 2>\&1
 rm -rf onboard_server/lib/__pycache__ > /dev/null 2>\&1
 rm \&1
 branch_name=$(git rev-parse --abbrev-ref HEAD)
