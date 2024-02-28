@@ -39,7 +39,7 @@ import logging
 def getSafeName(prov_req):
 
   with open("./json/safenamerules.json") as sr:
-      saferules = json.load(sr)
+      saferules = json.load(sr)["safenamerules"]
 
   logging.debug("================ getSafeName() ================")
   status_code = 200
@@ -92,6 +92,7 @@ def getSafeName(prov_req):
             logging.error(err_msg)
             response_body = err_msg
             break
+    response_body = f"Safe name generated: {safe_name}"
 
   logging.debug(f"\tstatus_code: {status_code}\n\tresponse: {response_body}")
 
